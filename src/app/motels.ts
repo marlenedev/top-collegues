@@ -4,3 +4,7 @@ export interface Collegues{
     pseudo: string, 
     score: number,
 }
+
+export enum Avis{
+    AIMER ='A', DETESTER='D'
+}

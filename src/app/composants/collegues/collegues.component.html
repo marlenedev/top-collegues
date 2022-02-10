@@ -1,5 +1,15 @@
-<div *ngIf="col">
-  <img src="{{ col.photoUrl }}" alt="" />
-  <p>{{ col.pseudo }}</p>
-  <p>{{ col.score }}</p>
+<div class="container">
+  <div class="row justify-content-around">
+    <div *ngIf="col" class="mb-3 card" style="width: 18rem">
+      <img src="{{ col.photoUrl }}" class="card-img-top" alt="" />
+      <p>{{ col.pseudo | uppercase }}</p>
+      <p>{{ col.score | score }}</p>
+
+      <app-avis
+        (avis)="traiterEvtAvis($event)"
+        [jaimeActif]="btnJaimeActif"
+        [jedetesteActif]="btnJedetesteActif"
+      ></app-avis>
+    </div>
+  </div>
 </div>

@@ -1,4 +1,12 @@
-<div id="boutons">
-  <button>J'aime</button>
-  <button>Je déteste</button>
+<div id="boutons" class="d-flex justify-content-around">
+  <button (click)="jaime()" [disabled]="!jaimeActif" class="btn btn-primary">
+    J'aime
+  </button>
+  <button
+    (click)="jedeteste()"
+    [disabled]="!jedetesteActif"
+    class="btn btn-warning"
+  >
+    Je déteste
+  </button>
 </div>
