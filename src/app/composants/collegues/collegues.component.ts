@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Avis, Collegues } from 'src/app/motels';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-collegues',
@@ -14,7 +15,10 @@ export class ColleguesComponent implements OnInit {
   btnJedetesteActif =false;
 
 
-  constructor() { }
+  constructor(private dataSrv: DataService) {
+    
+    
+   }
 
   ngOnInit(): void {
 
@@ -31,9 +35,12 @@ export class ColleguesComponent implements OnInit {
       if(avisEmis === Avis.AIMER){
         this.col.score=this.col.score +100;
       }else if (avisEmis === Avis.DETESTER){
-        this.col.score=this.col.score -100;
+        this.col.score=this.col.score -200;
       }
+     this.dataSrv.donnerUnAvis(this.col, avisEmis).subscribe();
     }
+
+    
 
     //on appel la fonstion de gestion des états des boutons
 

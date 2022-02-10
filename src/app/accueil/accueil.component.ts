@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Collegues } from '../motels';
 
 @Component({
   selector: 'app-accueil',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
 
+
+  //capacité d'emmettre un évènement
+  
+
   constructor() { }
 
   ngOnInit(): void {
+   
   }
+
+  
 
 }

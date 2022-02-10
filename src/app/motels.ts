@@ -6,5 +6,5 @@ export interface Collegues{
 }
 
 export enum Avis{
-    AIMER ='A', DETESTER='D'
+    AIMER ='AIMER', DETESTER='DETESTER'
 }

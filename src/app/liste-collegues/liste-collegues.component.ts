@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Collegues } from '../motels';
+import { DataService } from '../services/data.service';
 
 //creation d'un tableau contenant une liste de collegue
-const tableauColleguesFictifs = [
+/*const tableauColleguesFictifs = [
   {
     photoUrl:"https://cdn.pixabay.com/photo/2014/04/13/20/49/cat-323262_960_720.jpg",
     pseudo:"Miaou1",
@@ -48,7 +50,7 @@ const tableauColleguesFictifs = [
     pseudo:"Miaou3",
     score:900
   }
-];
+];*/
 
 @Component({
   selector: 'app-liste-collegues',
@@ -58,12 +60,16 @@ const tableauColleguesFictifs = [
 export class ListeColleguesComponent implements OnInit {
 
 
-  collegues : Collegues[];
+  collegues : Collegues[] = [];
 
-  constructor() { 
+  constructor(private dataSrv: DataService) { 
 
-    //jeu de données provisoire 
-    this.collegues=tableauColleguesFictifs;
+    this.dataSrv.listerCollegues().subscribe( listeCollegue => {
+      this.collegues=listeCollegue;
+    });
+
+    
+    
   }
 
   ngOnInit(): void {

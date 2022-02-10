@@ -7,7 +7,7 @@ import { ColleguesComponent } from './composants/collegues/collegues.component';
 import { ListeColleguesComponent } from './liste-collegues/liste-collegues.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ScorePipe } from './pipes/score.pipe';
-
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,9 @@ import { ScorePipe } from './pipes/score.pipe';
     ScorePipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    //import du module HTTP
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
