@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { ListeColleguesComponent } from '../liste-collegues/liste-collegues.component';
 import { Collegues } from '../motels';
 
 @Component({
@@ -9,7 +10,8 @@ import { Collegues } from '../motels';
 export class AccueilComponent implements OnInit {
 
 
-  //capacité d'emmettre un évènement
+  @ViewChild(ListeColleguesComponent)
+  composantListeCollegues?: ListeColleguesComponent;
   
 
   constructor() { }
@@ -17,7 +19,9 @@ export class AccueilComponent implements OnInit {
   ngOnInit(): void {
    
   }
-
+  actualiser(){
+    this.composantListeCollegues?.rafraichir();
+  }
   
 
 }

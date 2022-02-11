@@ -75,4 +75,11 @@ export class ListeColleguesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  rafraichir(){
+    this.dataSrv.listerCollegues().subscribe( listeCollegue => {
+      this.collegues=listeCollegue;
+    });
+  }
+
 }
