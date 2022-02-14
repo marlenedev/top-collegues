@@ -27,6 +27,7 @@ export class NouveauCollegueTempleFormComponent implements OnInit {
     console.log(this.collegues);
     this.dataSrv.ajouterCollegues(this.collegues).subscribe();
     this.collegues={};
+   
   }
   ngOnInit(): void {
   }

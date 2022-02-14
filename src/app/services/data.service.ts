@@ -49,5 +49,9 @@ export class DataService {
     })
   }
 
+  detailCollegue(pseudo :string): Observable<Collegues>{
+    return this.http.get<Collegues>("https://formation-angular-collegues.herokuapp.com/api/v1/collegues/"+pseudo);
+  }
+
 
 }

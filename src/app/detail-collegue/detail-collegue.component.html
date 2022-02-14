@@ -1,0 +1,11 @@
+<h2>Page de détail</h2>
+
+<ng-container *ngIf="collegues">
+  Detail du Collègue :
+  <div class="m-auto mb-3 card" style="width: 18rem">
+    <img src="{{ collegues.photo }}" class="card-img-top" alt="" />
+    <p>Nom : {{ collegues.nom }}</p>
+    <p>Prénom : {{ collegues.prenom }}</p>
+    <p>Score : {{ collegues.score }}</p>
+  </div>
+</ng-container>

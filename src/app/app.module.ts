@@ -10,6 +10,22 @@ import { ScorePipe } from './pipes/score.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import { NouveauCollegueTempleFormComponent } from './nouveau-collegue-temple-form/nouveau-collegue-temple-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { MenuComponentComponent } from './menu-component/menu-component.component';
+import { DetailCollegueComponent } from './detail-collegue/detail-collegue.component';
+
+
+const routerConfig:Routes =[
+  {
+   path : 'forms', component : NouveauCollegueTempleFormComponent
+  },
+  {
+   path : 'accueil', component : AccueilComponent
+  },
+  {
+    path : 'accueil/:pseudo', component : DetailCollegueComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -19,13 +35,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListeColleguesComponent,
     AccueilComponent,
     ScorePipe,
-    NouveauCollegueTempleFormComponent
+    NouveauCollegueTempleFormComponent,
+    MenuComponentComponent,
+    DetailCollegueComponent
   ],
   imports: [
     BrowserModule,
     //import du module HTTP
     HttpClientModule,
     FormsModule,
+    RouterModule.forRoot(routerConfig)
     
   ],
   providers: [],
