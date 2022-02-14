@@ -40,5 +40,14 @@ export class DataService {
     );
   }
 
+  ajouterCollegues(collegue:Partial<Collegues>){
+    return this.http.post<Collegues>("https://formation-angular-collegues.herokuapp.com/api/v1/collegues",{
+      "pseudo":collegue.pseudo,
+      "nom" : collegue.nom,
+      "prenom":collegue.prenom,
+      "photo" : collegue.photo
+    })
+  }
+
 
 }

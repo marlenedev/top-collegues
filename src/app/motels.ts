@@ -1,5 +1,8 @@
+
+
 export interface Collegues{
-    
+    nom: string,
+    prenom: string,
     photo: string,
     pseudo: string, 
     score: number,

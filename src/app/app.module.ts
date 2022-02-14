@@ -8,6 +8,8 @@ import { ListeColleguesComponent } from './liste-collegues/liste-collegues.compo
 import { AccueilComponent } from './accueil/accueil.component';
 import { ScorePipe } from './pipes/score.pipe';
 import {HttpClientModule} from '@angular/common/http';
+import { NouveauCollegueTempleFormComponent } from './nouveau-collegue-temple-form/nouveau-collegue-temple-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,15 @@ import {HttpClientModule} from '@angular/common/http';
     ColleguesComponent,
     ListeColleguesComponent,
     AccueilComponent,
-    ScorePipe
+    ScorePipe,
+    NouveauCollegueTempleFormComponent
   ],
   imports: [
     BrowserModule,
     //import du module HTTP
     HttpClientModule,
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,48 @@
+<h1>Formulaire</h1>
+{{ collegues | json }}
+<form #monForm="ngForm">
+  <label>Pseudo : </label
+  ><input
+    [(ngModel)]="collegues.pseudo"
+    #champ1="ngModel"
+    required
+    name="pseudo"
+  />
+  <p *ngIf="champ1.invalid">Champ Obligatoire</p>
+  <br />
+  <label>Nom : </label
+  ><input
+    [(ngModel)]="collegues.nom"
+    #champ2="ngModel"
+    required
+    minlength="3"
+    name="nom"
+  />
+  <p *ngIf="champ2.invalid">
+    Champ Obligatoire avec un minimum de deux caratères
+  </p>
+  <br />
+  <label>Prenom : </label
+  ><input
+    [(ngModel)]="collegues.prenom"
+    #champ3="ngModel"
+    required
+    minlength="3"
+    name="prenom"
+  />
+  <p *ngIf="champ3.invalid">
+    Champ Obligatoire avec un minimum de deux caratères
+  </p>
+  <br />
+  <label>Photo Url : </label
+  ><input
+    [(ngModel)]="collegues.photo"
+    #champ4="ngModel"
+    required
+    name="photo"
+  />
+  <p *ngIf="champ4.invalid">Champ Obligatoire</p>
+  <br />
+
+  <button (click)="submit()">Ajouter</button>
+</form>
